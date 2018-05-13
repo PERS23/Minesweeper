@@ -2,7 +2,7 @@ package github.com.PERS23;
 
 public class Plot {
 
-    private int mNumOfAdjacent; // -ve numOfAdjacent means that it is a mine
+    private int mAdjacentMineCount; // -ve getAdjacentMineCount means that it is a mine
     private boolean mCovered;
     private boolean mFlagged;
 
@@ -10,14 +10,14 @@ public class Plot {
         this(0);
     }
 
-    public Plot(int numOfAdjacent) {
-        mNumOfAdjacent = numOfAdjacent;
+    public Plot(int adjacentMineCount) {
+        mAdjacentMineCount = adjacentMineCount;
         mCovered = true;
         mFlagged = false;
     }
 
     public boolean isMine() {
-        return mNumOfAdjacent < 0;
+        return mAdjacentMineCount < 0;
     }
 
     public boolean isCovered() {
@@ -36,11 +36,11 @@ public class Plot {
         mFlagged = !mFlagged;
     }
 
-    public int numOfAdjacent() {
-        return mNumOfAdjacent;
+    public int getAdjacentMineCount() {
+        return mAdjacentMineCount;
     }
 
-    public Plot incrementNumOfAdjacent() {
-        return new Plot(mNumOfAdjacent++);
+    public void incrementAdjacentMineCount() {
+        mAdjacentMineCount++;
     }
 }
