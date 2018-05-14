@@ -1,0 +1,6 @@
+.outerContainer {
+    -fx-background-color: #B6B6B6;
+    -fx-border-radius: 0;
+    -fx-border-color: #FFFFFF #717171 #717171 #FFFFFF;
+    -fx-border-width: 3;
+}

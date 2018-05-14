@@ -1,0 +1,13 @@
+.button {
+    -fx-background-color: #B6B6B6;
+    -fx-border-radius: 0;
+    /* If a set of four paints is specified, they are used for the top, right, bottom,
+     * and left borders of the region, in that order. */
+    -fx-border-color: #FFFFFF #717171 #717171 #FFFFFF;
+    -fx-border-width: 3;
+}
+
+.button:pressed {
+    -fx-border-color: #717171 #B6B6B6 #B6B6B6 #717171;
+    -fx-border-width: 3 2 3 3;
+}
