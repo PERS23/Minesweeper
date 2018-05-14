@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/github/com/PERS23/VictoryStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/font/digital-7.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/aliveFace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/deadFace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/mine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/placementFace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/github/com/PERS23/MinefieldTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper/github/com/PERS23/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/com/PERS23/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/com/PERS23/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/com/PERS23/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/com/PERS23/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/com/PERS23/Minefield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/com/PERS23/Minefield.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/github/com/PERS23/Plot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/com/PERS23/Plot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/github/com/PERS23/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/github/com/PERS23/GameScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,61 +75,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Minefield.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Minefield.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/Minefield.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="104" column="44" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
-              <folding>
-                <element signature="e#2995#2996#0" expanded="true" />
-                <element signature="e#3033#3034#0" expanded="true" />
-                <element signature="e#3063#3064#0" expanded="true" />
-                <element signature="e#3098#3099#0" expanded="true" />
-                <element signature="e#3131#3132#0" expanded="true" />
-                <element signature="e#3164#3165#0" expanded="true" />
-                <element signature="e#3207#3208#0" expanded="true" />
-                <element signature="e#3250#3251#0" expanded="true" />
-                <element signature="e#3296#3297#0" expanded="true" />
-                <element signature="e#3342#3343#0" expanded="true" />
-                <element signature="e#3388#3389#0" expanded="true" />
-                <element signature="e#3434#3435#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1941">
+              <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="153" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VictoryStatus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/VictoryStatus.java">
+      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Plot.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/Plot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="86" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
-              <folding>
-                <element signature="e#854#855#0" expanded="true" />
-                <element signature="e#887#888#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MinefieldTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="377">
+              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1221#1222#0" expanded="true" />
+                <element signature="e#1257#1258#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainApplication.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/MainApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameScreen.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/GameScreen.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -154,9 +147,12 @@
         <option value="$PROJECT_DIR$/src/github/com/PERS23/MineField.java" />
         <option value="$PROJECT_DIR$/src/github/com/PERS23/Difficulty.java" />
         <option value="$PROJECT_DIR$/src/github/com/PERS23/VictoryStatus.java" />
+        <option value="$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java" />
         <option value="$PROJECT_DIR$/src/github/com/PERS23/Plot.java" />
         <option value="$PROJECT_DIR$/src/github/com/PERS23/Minefield.java" />
-        <option value="$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java" />
+        <option value="$PROJECT_DIR$/src/github/com/PERS23/MainApplication.java" />
+        <option value="$PROJECT_DIR$/src/github/com/PERS23/GameController.java" />
+        <option value="$PROJECT_DIR$/src/github/com/PERS23/GameScreen.fxml" />
       </list>
     </option>
   </component>
@@ -176,7 +172,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,23 +191,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="PERS23" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Minesweeper" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Minesweeper" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Minesweeper" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Minesweeper" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="PERS23" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,8 +212,8 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
@@ -237,6 +222,10 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GithubRepos\Java\Minesweeper\res\font" />
+      <recent name="D:\GithubRepos\Java\Minesweeper\res\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -251,14 +240,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MinefieldTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="sample.MainApplication" />
+      <option name="MAIN_CLASS_NAME" value="github.com.PERS23.MainApplication" />
       <module name="Minesweeper" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -285,6 +274,29 @@
       <option name="MAIN_CLASS_NAME" value="github.com.PERS23.MinefieldTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="github.com.PERS23.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="github.com.PERS23" />
+      <option name="MAIN_CLASS_NAME" value="github.com.PERS23.MinefieldTest" />
+      <option name="METHOD_NAME" value="itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -385,9 +397,11 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.MinefieldTest.testToString" />
       <item itemvalue="JUnit.MinefieldTest" />
+      <item itemvalue="JUnit.MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" />
         <item itemvalue="JUnit.MinefieldTest" />
         <item itemvalue="JUnit.MinefieldTest.testToString" />
       </list>
@@ -408,27 +422,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 13s.xml">
-      <configuration name="MinefieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 16s.xml">
-      <configuration name="MinefieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 18s.xml">
-      <configuration name="MinefieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 20s.xml">
-      <configuration name="MinefieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 22s.xml">
-      <configuration name="MinefieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 26s.xml">
-      <configuration name="MinefieldTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 29s.xml">
-      <configuration name="MinefieldTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 32s.xml">
       <configuration name="MinefieldTest" configurationId="JUnit" />
     </history-entry>
@@ -437,6 +430,27 @@
     </history-entry>
     <history-entry file="MinefieldTest - 2018.05.13 at 17h 40m 38s.xml">
       <configuration name="MinefieldTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MinefieldTest - 2018.05.14 at 12h 19m 30s.xml">
+      <configuration name="MinefieldTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MinefieldTest_itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots - 2018.05.14 at 12h 31m 51s.xml">
+      <configuration name="MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MinefieldTest_itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots - 2018.05.14 at 12h 32m 42s.xml">
+      <configuration name="MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MinefieldTest_itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots - 2018.05.14 at 12h 40m 35s.xml">
+      <configuration name="MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MinefieldTest_itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots - 2018.05.14 at 12h 40m 56s.xml">
+      <configuration name="MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MinefieldTest_itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots - 2018.05.14 at 12h 41m 47s.xml">
+      <configuration name="MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MinefieldTest_itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots - 2018.05.14 at 13h 17m 43s.xml">
+      <configuration name="MinefieldTest.itShouldCorrectlyLabelTheAdjacencyNumberOfAllPlots" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -447,7 +461,6 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32897604" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
@@ -458,8 +471,7 @@
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32897604" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22814499" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23347548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -467,8 +479,10 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="right" id="JetGradle" order="5" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32897604" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info anchor="bottom" id="Changes" order="8" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Profiler" order="9" />
@@ -488,7 +502,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -496,24 +510,38 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/VictoryStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/Plot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="86" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
+          <folding>
+            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/github/com/PERS23/MinefieldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/Minefield.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-          <folding>
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3033#3034#0" expanded="true" />
-            <element signature="e#3063#3064#0" expanded="true" />
-            <element signature="e#3098#3099#0" expanded="true" />
-            <element signature="e#3131#3132#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3207#3208#0" expanded="true" />
-            <element signature="e#3250#3251#0" expanded="true" />
-            <element signature="e#3296#3297#0" expanded="true" />
-            <element signature="e#3342#3343#0" expanded="true" />
-            <element signature="e#3388#3389#0" expanded="true" />
-            <element signature="e#3434#3435#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -523,12 +551,12 @@
           <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
           <folding>
             <element signature="e#854#855#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java">
+    <entry file="file://$PROJECT_DIR$/test/github/com/PERS23/MinefieldTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
@@ -542,24 +570,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="126" column="5" lean-forward="true" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
-          <folding>
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3033#3034#0" expanded="true" />
-            <element signature="e#3063#3064#0" expanded="true" />
-            <element signature="e#3098#3099#0" expanded="true" />
-            <element signature="e#3131#3132#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3207#3208#0" expanded="true" />
-            <element signature="e#3250#3251#0" expanded="true" />
-            <element signature="e#3296#3297#0" expanded="true" />
-            <element signature="e#3342#3343#0" expanded="true" />
-            <element signature="e#3388#3389#0" expanded="true" />
-            <element signature="e#3434#3435#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java">
+    <entry file="file://$PROJECT_DIR$/test/github/com/PERS23/MinefieldTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
@@ -576,7 +590,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java">
+    <entry file="file://$PROJECT_DIR$/test/github/com/PERS23/MinefieldTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
@@ -593,7 +607,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java">
+    <entry file="file://$PROJECT_DIR$/test/github/com/PERS23/MinefieldTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
@@ -746,20 +760,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/TitleController.java" />
     <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/PlotValue.java" />
-    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/MainApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -767,59 +767,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/Difficulty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/VictoryStatus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/Plot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="86" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
+        <state relative-caret-position="279">
+          <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
           <folding>
             <element signature="e#854#855#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/github/com/PERS23/MinefieldTest.java">
+    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/Difficulty.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="24">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/github/com/PERS23/MinefieldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/layout/GridPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="962" column="16" selection-start-line="962" selection-start-column="16" selection-end-line="962" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/font/digital-7.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/img/flag.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/img/mine.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/img/placementFace.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/img/aliveFace.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/img/deadFace.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/Minefield.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="104" column="44" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
+        <state relative-caret-position="1941">
+          <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="153" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
           <folding>
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3033#3034#0" expanded="true" />
-            <element signature="e#3063#3064#0" expanded="true" />
-            <element signature="e#3098#3099#0" expanded="true" />
-            <element signature="e#3131#3132#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3207#3208#0" expanded="true" />
-            <element signature="e#3250#3251#0" expanded="true" />
-            <element signature="e#3296#3297#0" expanded="true" />
-            <element signature="e#3342#3343#0" expanded="true" />
-            <element signature="e#3388#3389#0" expanded="true" />
-            <element signature="e#3434#3435#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/GameScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github/com/PERS23/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>

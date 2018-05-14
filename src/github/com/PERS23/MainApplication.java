@@ -9,8 +9,8 @@ public class MainApplication extends javafx.application.Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        Parent root = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
+        primaryStage.setTitle("OG Minesweeper");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }

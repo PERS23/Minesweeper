@@ -43,4 +43,17 @@ public class Plot {
     public void incrementAdjacentMineCount() {
         mAdjacentMineCount++;
     }
+
+    @Override
+    public String toString() {
+        if (this.isCovered()) {
+            return "_ ";
+        } else if (this.isFlagged()) {
+            return "F ";
+        } else if (this.isMine()) {
+            return "M ";
+        } else {
+            return getAdjacentMineCount() + " ";
+        }
+    }
 }

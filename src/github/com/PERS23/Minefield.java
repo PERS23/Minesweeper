@@ -5,6 +5,8 @@ import java.util.Random;
 public class Minefield {
 
     private Plot[][] mGrid; // [row][col]... [y][x]
+    private int mUncoveredPlots;
+    private int mSafePlots;
     private int mFlagsLeft;
     private VictoryStatus mVictoryStatus;
 
@@ -36,7 +38,7 @@ public class Minefield {
 
         for (int i = 0; i < numOfMines; i++) {
             int mineX = randomNumGen.nextInt(width), mineY = randomNumGen.nextInt(height);
-            // Keep searching for a new square if you're on a mine or if the one you're on has > 5 mines nearby
+                     // Keep searching for a new square if you're on a mine or if the one you're on has > 5 mines nearby
             while (randomField.isMine(mineX, mineY) || randomField.mGrid[mineY][mineX].getAdjacentMineCount() > 5) {
                 mineX = randomNumGen.nextInt(width);
                 mineY = randomNumGen.nextInt(height);
@@ -46,6 +48,7 @@ public class Minefield {
                 for (int y = -1; y <= 1; y++) {
                     if (x == 0 && y == 0) {
                         randomField.mGrid[mineY][mineX] = new Plot(Integer.MIN_VALUE);
+                        randomField.mSafePlots--;
                     } else if (randomField.isWithinBounds(mineX + x, mineY + y)) {
                         randomField.mGrid[mineY + y][mineX + x].incrementAdjacentMineCount();
                     }
@@ -66,10 +69,11 @@ public class Minefield {
         }
 
         mFlagsLeft = numOfMines;
+        mSafePlots = width * height;
         mVictoryStatus = VictoryStatus.PENDING;
     }
 
-    private boolean isWithinBounds(int x, int y) {
+    protected boolean isWithinBounds(int x, int y) {
         return (x >= 0 && x < this.getWidth()) && (y >= 0 && y < this.getHeight());
     }
 
@@ -85,7 +89,7 @@ public class Minefield {
         return mFlagsLeft;
     }
 
-    public boolean isMine(int x, int y) {
+    protected boolean isMine(int x, int y) {
         return mGrid[y][x].isMine();
     }
 
@@ -97,6 +101,10 @@ public class Minefield {
         return mGrid[y][x].isCovered();
     }
 
+    public int getAdjacentMineCount(int x, int y) {
+        return mGrid[y][x].getAdjacentMineCount();
+    }
+
     /* Cascade Algorithm:
      *
      * The algorithm resembles a 'flood fill' algorithm and is quite simple if implemented recursively:
@@ -105,13 +113,14 @@ public class Minefield {
      * If it does contain neighbouring mines, show the number of mines and stop the recursion for that cell
      * (otherwise the algorithm would solve the entire puzzle for you)
      */
+
     public void uncover(int x, int y) {
-        if (isCovered(x, y) && !isFlagged(x, y)) {                       // Only do this if it is covered and not marked
+        if (isCovered(x, y) && !isFlagged(x, y)) {                      // Only do this if it is covered and not flagged
             if (isMine(x, y)) {                                                            // If this is a mine you lose
                 mVictoryStatus = VictoryStatus.FAIL;
             } else {
                 mGrid[y][x].uncover();                                                        // Uncover the current one
-
+                mUncoveredPlots++;
                 if (mGrid[y][x].getAdjacentMineCount() == 0) {        // Recurse on all neighbours only if non are mines
                     for (int i = -1; i <= 1; i++) {
                         for (int j = -1; j <= 1; j++) {
@@ -120,15 +129,21 @@ public class Minefield {
                             }
                         }
                     }
-                } else {
-                    // Check if over
+                } else if (mUncoveredPlots == mSafePlots) {                    // If you've uncovered everything you win
+                    mVictoryStatus = VictoryStatus.SUCCESS;
                 }
             }
         }
     }
 
-    public void flag(int x, int y) {
-
+    public void toggleFlag(int x, int y) {
+        if (mGrid[y][x].isFlagged()) {
+            mFlagsLeft++;
+            mGrid[y][x].toggleFlagged();
+        } else if (mFlagsLeft > 0) {
+            mFlagsLeft--;
+            mGrid[y][x].toggleFlagged();  // Can't put after, otherwise bug could happen where can flag even tho ran out
+        }
     }
 
     @Override
@@ -137,13 +152,7 @@ public class Minefield {
 
         for (int y = 0; y < this.getHeight(); y++) {
             for (int x = 0; x < this.getWidth(); x++) {
-                if (isMine(x, y)) {
-                    rep.append("M ");
-                } else if (isCovered(x, y)) {
-                    rep.append("_ ");
-                } else {
-                    rep.append(mGrid[y][x].getAdjacentMineCount() + " ");
-                }
+                rep.append(mGrid[y][x]);
             }
             rep.append("\n");
         }
@@ -151,7 +160,3 @@ public class Minefield {
         return rep.toString();
     }
 }
-
-/* You win by clearing all the safe squares and lose if you click on a mine.
- * A mine counter tells you how many mines are still hidden and a time counter keeps track of your score.
- */
