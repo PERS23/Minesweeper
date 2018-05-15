@@ -6,10 +6,10 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
@@ -21,6 +21,10 @@
                 <Menu mnemonicParsing="false" text="Game">
                     <items>
                         <MenuItem mnemonicParsing="false" text="New Game" />
+                        <SeparatorMenuItem />
+                        <MenuItem mnemonicParsing="false" text="Statistics" />
+                        <SeparatorMenuItem />
+                        <MenuItem mnemonicParsing="false" text="Change Board" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
@@ -39,30 +43,24 @@
         <children>
             <GridPane fx:id="gameToolbar" styleClass="innerContainer">
                 <children>
-                    <Label fx:id="flagCountDisplay" GridPane.columnIndex="0" GridPane.rowIndex="0" contentDisplay="CENTER">
+                    <Label fx:id="flagCountDisplay" alignment="CENTER_LEFT" contentDisplay="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
                         <GridPane.margin>
                             <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                         </GridPane.margin>
                     </Label>
-                    <Region GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS" />
-                    <Button fx:id="gameStatusFace" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Region GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+                    <Button fx:id="gameStatusFace" maxHeight="50" maxWidth="50" styleClass="covered_button" GridPane.columnIndex="2" GridPane.rowIndex="0">
                         <GridPane.margin>
                             <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                         </GridPane.margin>
                     </Button>
-                    <Region GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS"  />
-                    <Label fx:id="timerDisplay" GridPane.columnIndex="4" GridPane.rowIndex="0" contentDisplay="CENTER">
+                    <Region GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+                    <Label fx:id="timerDisplay" contentDisplay="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="0">
                         <GridPane.margin>
                             <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                         </GridPane.margin>
                     </Label>
                 </children>
-               <columnConstraints>
-                  <ColumnConstraints />
-               </columnConstraints>
-               <rowConstraints>
-                   <RowConstraints />
-               </rowConstraints>
             </GridPane>
             <GridPane fx:id="gameGridDisplay" alignment="CENTER" styleClass="innerContainer" />
         </children>

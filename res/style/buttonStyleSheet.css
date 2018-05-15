@@ -1,4 +1,11 @@
-.button {
+.uncovered_button {
+    -fx-background-color: #B6B6B6;
+    -fx-border-radius: 0;
+    -fx-border-color: #717171;
+    -fx-border-width: 1;
+}
+
+.covered_button {
     -fx-background-color: #B6B6B6;
     -fx-border-radius: 0;
     /* If a set of four paints is specified, they are used for the top, right, bottom,
@@ -7,7 +14,14 @@
     -fx-border-width: 3;
 }
 
-.button:pressed {
+.covered_button:pressed {
     -fx-border-color: #717171 #B6B6B6 #B6B6B6 #717171;
     -fx-border-width: 3 2 3 3;
+}
+
+.death_button {
+    -fx-background-color: #FF180B;
+    -fx-border-radius: 0;
+    -fx-border-color: #717171;
+    -fx-border-width: 1;
 }

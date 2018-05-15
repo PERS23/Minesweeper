@@ -89,6 +89,10 @@ public class Minefield {
         return mFlagsLeft;
     }
 
+    public VictoryStatus getVictoryStatus() {
+        return mVictoryStatus;
+    }
+
     protected boolean isMine(int x, int y) {
         return mGrid[y][x].isMine();
     }
@@ -140,7 +144,7 @@ public class Minefield {
         if (mGrid[y][x].isFlagged()) {
             mFlagsLeft++;
             mGrid[y][x].toggleFlagged();
-        } else if (mFlagsLeft > 0) {
+        } else if (!mGrid[y][x].isFlagged() && mFlagsLeft > 0) {
             mFlagsLeft--;
             mGrid[y][x].toggleFlagged();  // Can't put after, otherwise bug could happen where can flag even tho ran out
         }
