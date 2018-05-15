@@ -14,17 +14,23 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.CheckMenuItem?>
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="github.com.PERS23.GameController">
     <top>
         <MenuBar fx:id="gameMenu" BorderPane.alignment="CENTER">
             <menus>
                 <Menu mnemonicParsing="false" text="Game">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="New Game" />
+                        <MenuItem mnemonicParsing="false" text="New Game" accelerator="F2" onAction="#startNewGame" />
+                        <Menu mnemonicParsing="false" text="Change Board" >
+                            <CheckMenuItem fx:id="beginnerOption" mnemonicParsing="false" text="Beginner" selected="true" onAction="#handleChangeDifficulty"/>
+                            <CheckMenuItem fx:id="intermediateOption" mnemonicParsing="false" text="Intermediate" selected="false" onAction="#handleChangeDifficulty" />
+                            <CheckMenuItem fx:id="expertOption" mnemonicParsing="false" text="Expert" selected="false" onAction="#handleChangeDifficulty" />
+                        </Menu>
                         <SeparatorMenuItem />
-                        <MenuItem mnemonicParsing="false" text="Statistics" />
+                        <MenuItem mnemonicParsing="false" text="Statistics" accelerator="F4" />
                         <SeparatorMenuItem />
-                        <MenuItem mnemonicParsing="false" text="Change Board" />
+                        <MenuItem mnemonicParsing="false" text="Exit" onAction="#handleExitMenuOption"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">

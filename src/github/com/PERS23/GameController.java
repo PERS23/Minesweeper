@@ -1,10 +1,13 @@
 package github.com.PERS23;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
@@ -37,8 +40,9 @@ public class GameController implements Initializable {
     private final Paint mTimerColor;
     private final Paint[] mAdjacentColors;
 
-    @FXML private MenuBar gameMenu;
-    @FXML private VBox gameContainer;
+    @FXML private CheckMenuItem beginnerOption;
+    @FXML private CheckMenuItem intermediateOption;
+    @FXML private CheckMenuItem expertOption;
     @FXML private GridPane gameToolbar;
     @FXML private Label flagCountDisplay;
     @FXML private Label timerDisplay;
@@ -95,6 +99,33 @@ public class GameController implements Initializable {
         initializeGameGrid();
         determineStatusFace();
         updateFlagCount();
+    }
+
+    @FXML
+    public void handleChangeDifficulty(ActionEvent e) {
+        beginnerOption.setSelected(false);
+        intermediateOption.setSelected(false);
+        expertOption.setSelected(false);
+
+        if (e.getTarget() == beginnerOption) {
+            changeDifficulty(Difficulty.BEGINNER);
+            beginnerOption.setSelected(true);
+        } else if (e.getTarget() == intermediateOption) {
+            changeDifficulty(Difficulty.INTERMEDIATE);
+            intermediateOption.setSelected(true);
+        } else {
+            changeDifficulty(Difficulty.EXPERT);
+            expertOption.setSelected(true);
+        }
+    }
+
+    private void changeDifficulty(Difficulty difficultyLevel) {
+        mCurrentDifficulty = difficultyLevel;
+    }
+
+    @FXML
+    public void handleExitMenuOption() {
+        Platform.exit();
     }
 
     private void initializeGameGrid() {

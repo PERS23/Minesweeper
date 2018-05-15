@@ -1,0 +1,10 @@
+todo:
+
+    - Stop button click animation for flagged tiles
+    - Implement timer functionality
+    - Add statistics
+    - Difficulty change hotkeys
+    - Create and use a string file
+    - Add help section
+    - Add resize limits
+    - Fix bug where when all are marked, it doesn't detect victory

@@ -15,7 +15,7 @@ public class MainApplication extends javafx.application.Application {
         Scene scene = new Scene(root, 1440, 900);
         scene.getStylesheets().addAll("style/buttonStyleSheet.css", "style/outerContainerStyleSheet.css", "style/innerContainerStyleSheet.css");
 
-        primaryStage.setTitle("OG Minesweeper");
+        primaryStage.setTitle("Minesweeper");
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("img/mine.png"));
         primaryStage.setResizable(false);
