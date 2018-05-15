@@ -23,8 +23,6 @@ public class GameController implements Initializable {
     private Difficulty mCurrentDifficulty;
     private Minefield mGame;
 
-    private Stage mStage;
-
     private final Image mAliveFaceImage;
     private final Image mDeadFaceImage;
     private final Image mPlacementFaceImage;
@@ -90,6 +88,15 @@ public class GameController implements Initializable {
          * values after the stage is shown. */
     }
 
+    @FXML
+    private void startNewGame() {
+        mGame = Minefield.randomField(mCurrentDifficulty);
+        gameGridDisplay.getChildren().clear();
+        initializeGameGrid();
+        determineStatusFace();
+        updateFlagCount();
+    }
+
     private void initializeGameGrid() {
         for (int y = 0; y < mGame.getHeight(); y++) {
             for (int x = 0; x < mGame.getWidth(); x++) {
@@ -107,7 +114,10 @@ public class GameController implements Initializable {
         root.setMaxSize(42, 42);
 
         root.setOnMousePressed(e -> {
-            setPlacementFaceImage();
+            MouseButton button = e.getButton();
+            if (button == MouseButton.PRIMARY) {
+                setPlacementFaceImage();
+            }
         });
 
         root.setOnMouseReleased(e -> { // Putting action code in release so face gets updated after
@@ -126,13 +136,13 @@ public class GameController implements Initializable {
                     highlightDeathMine(x, y);
                     disableAllCells();
                 }
+
+                determineStatusFace();
             } else if (button == MouseButton.SECONDARY) {
                 mGame.toggleFlag(x, y);
                 refreshGameGrid();
                 updateFlagCount();
             }
-
-            determineStatusFace();
         });
 
         return root;

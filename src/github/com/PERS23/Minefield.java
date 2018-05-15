@@ -141,12 +141,14 @@ public class Minefield {
     }
 
     public void toggleFlag(int x, int y) {
-        if (mGrid[y][x].isFlagged()) {
-            mFlagsLeft++;
-            mGrid[y][x].toggleFlagged();
-        } else if (!mGrid[y][x].isFlagged() && mFlagsLeft > 0) {
-            mFlagsLeft--;
-            mGrid[y][x].toggleFlagged();  // Can't put after, otherwise bug could happen where can flag even tho ran out
+        if (isCovered(x, y)) {
+            if (isFlagged(x, y)) {
+                mFlagsLeft++;
+                mGrid[y][x].toggleFlagged();
+            } else if (!isFlagged(x, y) && mFlagsLeft > 0) {
+                mFlagsLeft--;
+                mGrid[y][x].toggleFlagged();  // Can't put after, otherwise bug could happen where can flag even tho ran out
+            }
         }
     }
 

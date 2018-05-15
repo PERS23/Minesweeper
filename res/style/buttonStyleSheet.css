@@ -9,7 +9,9 @@
     -fx-background-color: #B6B6B6;
     -fx-border-radius: 0;
     /* If a set of four paints is specified, they are used for the top, right, bottom,
-     * and left borders of the region, in that order. */
+     * and left borders of the region, in that order.
+     * Also no -border-style: insets; in JavaFX >:(
+     */
     -fx-border-color: #FFFFFF #717171 #717171 #FFFFFF;
     -fx-border-width: 3;
 }
