@@ -1,5 +1,8 @@
 package github.com.PERS23;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +20,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,6 +29,10 @@ public class GameController implements Initializable {
 
     private Difficulty mCurrentDifficulty;
     private Minefield mGame;
+
+    private Timeline mTimerAnimation;
+    private boolean mTimerRunning;
+    private int mCurrentCount;
 
     private final Image mAliveFaceImage;
     private final Image mDeadFaceImage;
@@ -81,6 +89,9 @@ public class GameController implements Initializable {
         flagCountDisplay.setTextFill(mTimerColor);
         flagCountDisplay.setBackground(mTimerBackground);
 
+        mTimerAnimation = new Timeline(new KeyFrame(Duration.seconds(1), e -> this.incrementTimer()));
+        mTimerAnimation.setCycleCount(Animation.INDEFINITE);
+
         timerDisplay.setText("000");
         timerDisplay.setFont(mTimerFont);
         timerDisplay.setTextFill(mTimerColor);
@@ -99,6 +110,7 @@ public class GameController implements Initializable {
         initializeGameGrid();
         determineStatusFace();
         updateFlagCount();
+        resetTimer();
     }
 
     @FXML
@@ -146,7 +158,7 @@ public class GameController implements Initializable {
 
         root.setOnMousePressed(e -> {
             MouseButton button = e.getButton();
-            if (button == MouseButton.PRIMARY) {
+            if (button == MouseButton.PRIMARY && mGame.isCovered(x, y)) {
                 setPlacementFaceImage();
             }
         });
@@ -154,22 +166,28 @@ public class GameController implements Initializable {
         root.setOnMouseReleased(e -> { // Putting action code in release so face gets updated after
             MouseButton button = e.getButton();
 
-            if (button == MouseButton.PRIMARY) {
+            if (button == MouseButton.PRIMARY && mGame.isCovered(x, y)) {
                 mGame.uncover(x, y);
+
+                if (!mTimerRunning) {
+                    startTimer();
+                }
 
                 if (mGame.getVictoryStatus() == VictoryStatus.PENDING) {
                     refreshGameGrid();
                 } else if (mGame.getVictoryStatus() == VictoryStatus.SUCCESS) {
                     refreshGameGrid();
                     disableAllCells();
+                    stopTimer();
                 } else {
                     highlightAllMines();
                     highlightDeathMine(x, y);
                     disableAllCells();
+                    stopTimer();
                 }
 
                 determineStatusFace();
-            } else if (button == MouseButton.SECONDARY) {
+            } else if (button == MouseButton.SECONDARY && mGame.isCovered(x, y)) {
                 mGame.toggleFlag(x, y);
                 refreshGameGrid();
                 updateFlagCount();
@@ -257,6 +275,29 @@ public class GameController implements Initializable {
                     }
                 }
             }
+        }
+    }
+
+    private void startTimer() {
+        resetTimer();
+        mTimerAnimation.play();
+        mTimerRunning = true;
+    }
+
+    private void stopTimer() {
+        mTimerAnimation.stop();
+        mTimerRunning = false;
+    }
+
+    private void resetTimer() {
+        mCurrentCount = 0;
+        timerDisplay.setText(String.format("%03d", mCurrentCount));
+    }
+
+    private void incrementTimer() {
+        ++mCurrentCount;
+        if (mCurrentCount < 1000) {
+            timerDisplay.setText(String.format("%03d", mCurrentCount));
         }
     }
 

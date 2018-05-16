@@ -109,6 +109,10 @@ public class Minefield {
         return mGrid[y][x].getAdjacentMineCount();
     }
 
+    public int getUncoveredPlotCount() {
+        return mUncoveredPlots;
+    }
+
     /* Cascade Algorithm:
      *
      * The algorithm resembles a 'flood fill' algorithm and is quite simple if implemented recursively:
@@ -133,7 +137,7 @@ public class Minefield {
                             }
                         }
                     }
-                } else if (mUncoveredPlots == mSafePlots) {                    // If you've uncovered everything you win
+                } else if (mUncoveredPlots >= mSafePlots) {                    // If you've uncovered everything you win
                     mVictoryStatus = VictoryStatus.SUCCESS;
                 }
             }
