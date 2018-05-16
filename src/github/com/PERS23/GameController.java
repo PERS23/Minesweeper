@@ -9,10 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -23,12 +20,14 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
 
     private Difficulty mCurrentDifficulty;
     private Minefield mGame;
+    private GameStats mGameStats;
 
     private Timeline mTimerAnimation;
     private boolean mTimerRunning;
@@ -51,7 +50,6 @@ public class GameController implements Initializable {
     @FXML private CheckMenuItem beginnerOption;
     @FXML private CheckMenuItem intermediateOption;
     @FXML private CheckMenuItem expertOption;
-    @FXML private GridPane gameToolbar;
     @FXML private Label flagCountDisplay;
     @FXML private Label timerDisplay;
     @FXML private Button gameStatusFace;
@@ -60,6 +58,7 @@ public class GameController implements Initializable {
     public GameController() {
         mCurrentDifficulty = Difficulty.BEGINNER;
         mGame = Minefield.randomField(mCurrentDifficulty);
+        mGameStats = new GameStats();
 
         mAliveFaceImage = new Image("img/aliveFace.png");
         mDeadFaceImage = new Image("img/deadFace.png");
@@ -136,6 +135,38 @@ public class GameController implements Initializable {
     }
 
     @FXML
+    public void showStats() {
+        boolean isTimerRunning = mTimerRunning;
+
+        if (isTimerRunning) {
+            stopTimer();
+        }
+
+        Alert statistics = new Alert(Alert.AlertType.NONE);
+
+        statistics.setTitle("Fastest Mine Sweepers");
+        statistics.setContentText(mGameStats.toString());
+
+        Stage alertStage = (Stage) statistics.getDialogPane().getScene().getWindow();
+        alertStage.getIcons().add(mMineImage);
+
+        ButtonType reset = new ButtonType("Reset Scores");
+        ButtonType ok = new ButtonType("Ok");
+
+        statistics.getButtonTypes().setAll(reset, ok);
+
+        Optional<ButtonType> result = statistics.showAndWait();
+
+        if (result.get() == reset) {
+            mGameStats.resetStats();
+        }
+
+        if (isTimerRunning) {
+            startTimer();
+        }
+    }
+
+    @FXML
     public void handleExitMenuOption() {
         Platform.exit();
     }
@@ -179,6 +210,7 @@ public class GameController implements Initializable {
                     refreshGameGrid();
                     disableAllCells();
                     stopTimer();
+                    mGameStats.update(mCurrentCount, mCurrentDifficulty);
                 } else {
                     highlightAllMines();
                     highlightDeathMine(x, y);
@@ -279,7 +311,6 @@ public class GameController implements Initializable {
     }
 
     private void startTimer() {
-        resetTimer();
         mTimerAnimation.play();
         mTimerRunning = true;
     }
@@ -290,6 +321,7 @@ public class GameController implements Initializable {
     }
 
     private void resetTimer() {
+        stopTimer();
         mCurrentCount = 0;
         timerDisplay.setText(String.format("%03d", mCurrentCount));
     }

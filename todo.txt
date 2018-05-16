@@ -1,7 +1,7 @@
 todo:
 
     - Stop button click animation for flagged tiles
-    - Add statistics
+    - Make statistics serializable
     - Create and use a string file
     - Add help section
     - Add resize limits
@@ -13,6 +13,7 @@ done:
 
     - Fix bug where when all are marked, it doesn't detect victory
         * I think, added line where click doesn't do anything unless it is covered
-
     - Difficulty change hot-keys
     - Implement timer functionality
+    - Add statistics
+    - Format statistics better

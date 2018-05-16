@@ -28,7 +28,7 @@
                             <CheckMenuItem fx:id="expertOption" mnemonicParsing="false" text="Expert" selected="false" onAction="#handleChangeDifficulty" accelerator="F7" />
                         </Menu>
                         <SeparatorMenuItem />
-                        <MenuItem mnemonicParsing="false" text="Statistics" accelerator="F4" />
+                        <MenuItem mnemonicParsing="false" text="Statistics" accelerator="F4" onAction="#showStats" />
                         <SeparatorMenuItem />
                         <MenuItem mnemonicParsing="false" text="Exit" onAction="#handleExitMenuOption"/>
                     </items>
