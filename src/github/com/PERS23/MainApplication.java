@@ -10,15 +10,22 @@ public class MainApplication extends javafx.application.Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScreen.fxml"));
+        Parent root = (Parent) loader.load();
 
-        Scene scene = new Scene(root, 1440, 900);
+        GameController controller = (GameController) loader.getController();
+        controller.setStage(primaryStage);
+
+        Scene scene = new Scene(root);
         scene.getStylesheets().addAll("style/buttonStyleSheet.css", "style/outerContainerStyleSheet.css", "style/innerContainerStyleSheet.css");
 
         primaryStage.setTitle("Minesweeper");
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("img/mine.png"));
-        primaryStage.setResizable(false);
+        primaryStage.setWidth(439);
+        primaryStage.setMinWidth(439);
+        primaryStage.setHeight(595);
+        primaryStage.setMinHeight(595);
         primaryStage.show();
     }
 

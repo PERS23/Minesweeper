@@ -47,11 +47,14 @@ public class GameController implements Initializable {
     private final Paint mTimerColor;
     private final Paint[] mAdjacentColors;
 
+    private Stage mStage;
+
     @FXML private CheckMenuItem beginnerOption;
     @FXML private CheckMenuItem intermediateOption;
     @FXML private CheckMenuItem expertOption;
     @FXML private Label flagCountDisplay;
     @FXML private Label timerDisplay;
+    @FXML private VBox gameContainer;
     @FXML private Button gameStatusFace;
     @FXML private GridPane gameGridDisplay;
 
@@ -97,19 +100,52 @@ public class GameController implements Initializable {
         timerDisplay.setBackground(mTimerBackground);
 
         gameStatusFace.setGraphic(new ImageView(mAliveFaceImage));
+    }
 
-        /* You have to add the components before the stage is shown and get the height/width
-         * values after the stage is shown. */
+    public void setStage(Stage stage) {
+        mStage = stage;
     }
 
     @FXML
     private void startNewGame() {
         mGame = Minefield.randomField(mCurrentDifficulty);
+
         gameGridDisplay.getChildren().clear();
         initializeGameGrid();
+
         determineStatusFace();
         updateFlagCount();
         resetTimer();
+
+        updateStageSize();
+    }
+
+    private void updateStageSize() {
+        /* You have to add the components before the stage is shown and get the height/width
+         * values after the stage is shown.
+         *
+         * Real dumb way of doing min size.
+         */
+        switch (mCurrentDifficulty) {
+            case BEGINNER:
+                mStage.setMinWidth(439);
+                mStage.setWidth(439);
+                mStage.setMinHeight(595);
+                mStage.setHeight(595);
+                break;
+            case INTERMEDIATE:
+                mStage.setMinWidth(733);
+                mStage.setWidth(733);
+                mStage.setMinHeight(888);
+                mStage.setHeight(888);
+                break;
+            case EXPERT:
+                mStage.setMinWidth(1321);
+                mStage.setWidth(1321);
+                mStage.setMinHeight(888);
+                mStage.setHeight(888);
+                break;
+        }
     }
 
     @FXML
