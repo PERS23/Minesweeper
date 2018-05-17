@@ -19,6 +19,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.*;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -61,7 +62,7 @@ public class GameController implements Initializable {
     public GameController() {
         mCurrentDifficulty = Difficulty.BEGINNER;
         mGame = Minefield.randomField(mCurrentDifficulty);
-        mGameStats = new GameStats();
+        loadInStats();
 
         mAliveFaceImage = new Image("img/aliveFace.png");
         mDeadFaceImage = new Image("img/deadFace.png");
@@ -100,6 +101,20 @@ public class GameController implements Initializable {
         timerDisplay.setBackground(mTimerBackground);
 
         gameStatusFace.setGraphic(new ImageView(mAliveFaceImage));
+    }
+
+    private void loadInStats() {
+        File statsSave = new File(GameStats.SAVE_FILE);
+
+        try (ObjectInputStream is = new ObjectInputStream(new FileInputStream(statsSave))) {
+            mGameStats = (GameStats) is.readObject();
+        } catch (FileNotFoundException e) {
+            mGameStats = new GameStats();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setStage(Stage stage) {

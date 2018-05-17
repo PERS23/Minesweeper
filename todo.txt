@@ -1,7 +1,6 @@
 todo:
 
     - Stop button click animation for flagged tiles
-    - Make statistics serializable
     - Create and use a string file
     - Add help section
     - Add resize limits
@@ -17,3 +16,4 @@ done:
     - Implement timer functionality
     - Add statistics
     - Format statistics better
+    - Make statistics serializable

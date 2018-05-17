@@ -1,10 +1,11 @@
 package github.com.PERS23;
 
-import java.io.Serializable;
+import java.io.*;
 
 public class GameStats implements Serializable {
 
-    int[] mBestTimes;
+    public static final String SAVE_FILE = "best_times";
+    private int[] mBestTimes;
 
     public GameStats() {
         mBestTimes = new int[3];
@@ -18,12 +19,25 @@ public class GameStats implements Serializable {
     public void update(int timeTaken, Difficulty difficultyLevel) {
         if (timeTaken < getBestTime(difficultyLevel)) {
             mBestTimes[difficultyLevel.highscoreIndex()] = timeTaken;
+            saveOutStats();
         }
     }
 
     public void resetStats() {
         for (int i = 0; i < 3; i++) {
             mBestTimes[i] = Integer.MAX_VALUE;
+        }
+        saveOutStats();
+    }
+
+    private void saveOutStats() {
+        File statsSave = new File(SAVE_FILE);
+        try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(statsSave))) {
+            os.writeObject(this);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
