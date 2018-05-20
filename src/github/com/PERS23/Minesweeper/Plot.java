@@ -1,4 +1,4 @@
-package github.com.PERS23;
+package github.com.PERS23.Minesweeper;
 
 public class Plot {
 

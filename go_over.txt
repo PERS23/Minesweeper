@@ -1,7 +1,0 @@
-Serialization
-Animation key frames
-Javafx resources
-quickly - general structure of javafx
-String property
-buttontype
-optional
