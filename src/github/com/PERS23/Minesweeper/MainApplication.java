@@ -6,11 +6,15 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 public class MainApplication extends javafx.application.Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScreen.fxml"));
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("values/strings", Locale.ENGLISH);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScreen.fxml"), resourceBundle);
         Parent root = (Parent) loader.load();
 
         GameController controller = (GameController) loader.getController();
@@ -19,7 +23,7 @@ public class MainApplication extends javafx.application.Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().addAll("style/buttonStyleSheet.css", "style/outerContainerStyleSheet.css", "style/innerContainerStyleSheet.css");
 
-        primaryStage.setTitle("Minesweeper");
+        primaryStage.setTitle(resourceBundle.getString("title"));
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("img/mine.png"));
         primaryStage.setWidth(439);

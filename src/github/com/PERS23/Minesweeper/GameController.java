@@ -26,6 +26,8 @@ import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
 
+    public static ResourceBundle sResourceBundle;
+
     private Difficulty mCurrentDifficulty;
     private Minefield mGame;
     private GameStats mGameStats;
@@ -42,8 +44,8 @@ public class GameController implements Initializable {
     private final Image mMineImage;
     private final Image mWrongMineImage;
 
-    private final Font mGridFont;
-    private final Font mTimerFont;
+    private Font mGridFont;
+    private Font mTimerFont;
     private final Background mTimerBackground;
     private final Paint mTimerColor;
     private final Paint[] mAdjacentColors;
@@ -72,9 +74,20 @@ public class GameController implements Initializable {
         mMineImage = new Image("img/mine.png");
         mWrongMineImage = new Image("img/wrongMine.png");
 
-        mGridFont = new Font("Visitor TT1 BRK", 20);
+        try {
+            mGridFont = Font.loadFont(new FileInputStream(new File("res/font/visitor1.ttf")), 20);
+        } catch (FileNotFoundException e) {
+            mGridFont = new Font(20);
+            e.printStackTrace();
+        }
 
-        mTimerFont = new Font("Digital-7", 48);
+        try {
+            mTimerFont = Font.loadFont(new FileInputStream(new File("res/font/digital-7.ttf")), 48);
+        } catch (FileNotFoundException e) {
+            mGridFont = new Font(48);
+            e.printStackTrace();
+        }
+
         mTimerBackground = new Background(new BackgroundFill(Paint.valueOf("#000000"), CornerRadii.EMPTY, Insets.EMPTY));
         mTimerColor = Paint.valueOf("#FF180B");
 
@@ -85,6 +98,7 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        sResourceBundle = resources;
         initializeGameGrid();
 
         flagCountDisplay.setText(String.format("%03d", mGame.getFlagsLeft()));
@@ -195,14 +209,14 @@ public class GameController implements Initializable {
 
         Alert statistics = new Alert(Alert.AlertType.NONE);
 
-        statistics.setTitle("Fastest Mine Sweepers");
+        statistics.setTitle(sResourceBundle.getString("scores_title"));
         statistics.setContentText(mGameStats.toString());
 
         Stage alertStage = (Stage) statistics.getDialogPane().getScene().getWindow();
         alertStage.getIcons().add(mMineImage);
 
-        ButtonType reset = new ButtonType("Reset Scores");
-        ButtonType ok = new ButtonType("Ok");
+        ButtonType reset = new ButtonType(sResourceBundle.getString("reset_scores"));
+        ButtonType ok = new ButtonType(sResourceBundle.getString("ok_button"));
 
         statistics.getButtonTypes().setAll(reset, ok);
 

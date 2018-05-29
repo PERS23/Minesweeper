@@ -15,27 +15,27 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.CheckMenuItem?>
-<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="github.com.PERS23.GameController">
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="github.com.PERS23.Minesweeper.GameController">
     <top>
         <MenuBar fx:id="gameMenu" BorderPane.alignment="CENTER">
             <menus>
                 <Menu mnemonicParsing="false" text="Game">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="New Game" accelerator="F2" onAction="#startNewGame" />
-                        <Menu mnemonicParsing="false" text="Change Board" >
-                            <CheckMenuItem fx:id="beginnerOption" mnemonicParsing="false" text="Beginner" selected="true" onAction="#handleChangeDifficulty" accelerator="F5"/>
-                            <CheckMenuItem fx:id="intermediateOption" mnemonicParsing="false" text="Intermediate" selected="false" onAction="#handleChangeDifficulty" accelerator="F6"/>
-                            <CheckMenuItem fx:id="expertOption" mnemonicParsing="false" text="Expert" selected="false" onAction="#handleChangeDifficulty" accelerator="F7" />
+                        <MenuItem mnemonicParsing="false" text="%new_game_menu_option" accelerator="F2" onAction="#startNewGame" />
+                        <Menu mnemonicParsing="false" text="%change_board_menu_option" >
+                            <CheckMenuItem fx:id="beginnerOption" mnemonicParsing="false" text="%beginner_menu_option" selected="true" onAction="#handleChangeDifficulty" accelerator="F5"/>
+                            <CheckMenuItem fx:id="intermediateOption" mnemonicParsing="false" text="%intermediate_menu_option" selected="false" onAction="#handleChangeDifficulty" accelerator="F6"/>
+                            <CheckMenuItem fx:id="expertOption" mnemonicParsing="false" text="%expert_menu_option" selected="false" onAction="#handleChangeDifficulty" accelerator="F7" />
                         </Menu>
                         <SeparatorMenuItem />
-                        <MenuItem mnemonicParsing="false" text="Statistics" accelerator="F4" onAction="#showStats" />
+                        <MenuItem mnemonicParsing="false" text="%stats_menu_option" accelerator="F4" onAction="#showStats" />
                         <SeparatorMenuItem />
-                        <MenuItem mnemonicParsing="false" text="Exit" onAction="#handleExitMenuOption"/>
+                        <MenuItem mnemonicParsing="false" text="%exit_menu_option" onAction="#handleExitMenuOption"/>
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="%help_menu">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="%about_menu_option" />
                     </items>
                 </Menu>
             </menus>

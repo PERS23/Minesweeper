@@ -59,11 +59,11 @@ public class GameStats implements Serializable {
     @Override
     public String toString() {
         return String.format("%-30s%s\n%-30s%s\n%-30s%s",
-                "Beginner:",
+                GameController.sResourceBundle.getString("beginner_stats_display"),
                 getTimeString(Difficulty.BEGINNER),
-                "Intermediate:",
+                GameController.sResourceBundle.getString("intermediate_stats_display"),
                 getTimeString(Difficulty.INTERMEDIATE),
-                "Expert:",
+                GameController.sResourceBundle.getString("expert_stats_display"),
                 getTimeString(Difficulty.EXPERT));
     }
 }
