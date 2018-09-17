@@ -13,7 +13,7 @@ public class MainApplication extends javafx.application.Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("values/strings", Locale.ENGLISH);
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("values/strings", Locale.getDefault());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScreen.fxml"), resourceBundle);
         Parent root = (Parent) loader.load();
 
