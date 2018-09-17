@@ -1,4 +1,4 @@
-package github.com.PERS23.Minesweeper;
+package PERS23.Minesweeper;
 
 public enum VictoryStatus {
     FAIL,

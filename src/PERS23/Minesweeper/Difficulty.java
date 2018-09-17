@@ -1,4 +1,4 @@
-package github.com.PERS23.Minesweeper;
+package PERS23.Minesweeper;
 
 public enum Difficulty {
     BEGINNER("Beginner", 10, 9, 9, 0),

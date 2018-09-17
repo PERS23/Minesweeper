@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.CheckMenuItem?>
-<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="github.com.PERS23.Minesweeper.GameController">
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PERS23.Minesweeper.GameController">
     <top>
         <MenuBar fx:id="gameMenu" BorderPane.alignment="CENTER">
             <menus>

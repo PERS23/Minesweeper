@@ -1,4 +1,4 @@
-package github.com.PERS23.Minesweeper;
+package PERS23.Minesweeper;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
